@@ -17,6 +17,14 @@ main {
   height: calc(100vh - 150px);
 }
 
-main > * {
+.editor {
+  border: 1px solid lightgray;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
+
+.preview {
   border: 1px solid lightgray;
 }
