@@ -16,10 +16,15 @@ const Main = () => {
         source.click();
     }
 
+    function handleReset() {
+        setMarkdown('')
+    }
+
     return (
         <main>
             <div>
                 <div className="options">
+                    <button onClick={handleReset} type="button">Reset</button>
                     <button onClick={handleDownload} type="button">Download</button>
                 </div>
                 <textarea className="editor" onChange={handleChange} value={markdown} />
