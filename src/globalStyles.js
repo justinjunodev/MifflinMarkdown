@@ -1,5 +1,6 @@
-/* Just some temporary styles to get things rolling */
+import { createGlobalStyle } from "styled-components"
 
+const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
   margin: 0;
@@ -33,3 +34,6 @@ main {
 .preview {
   border: 1px solid lightgray;
 }
+`
+
+export default GlobalStyle
