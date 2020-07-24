@@ -23,7 +23,8 @@ html {
 }
 
 body {
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   padding: 0 2rem;
   margin: 0;
   font-size: 1rem;

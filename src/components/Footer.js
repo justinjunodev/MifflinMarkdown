@@ -20,7 +20,7 @@ const FooterWrapper = styled.footer`
   place-content: center;
   text-align: center;
   color: var(--light);
-  height: 150px;
+  height: 125px;
   h2,
   h3 {
     font-family: var(--sans);

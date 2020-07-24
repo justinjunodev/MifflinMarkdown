@@ -1,13 +1,22 @@
 import React, { useState } from "react"
+import styled from "styled-components"
 import ReactMarkdown from "react-markdown"
 
 const Main = () => {
+  // Set Initial State
   const [markdown, setMarkdown] = useState("# Hello, Markdown!")
 
+  // Updates the state on textarea change.
   function handleChange(e) {
     setMarkdown(e.target.value)
   }
 
+  // Resets/ clears current markdown state.
+  function handleReset() {
+    setMarkdown("")
+  }
+
+  // Generates new Blob and downloads markdown file.
   function handleDownload() {
     const source = document.createElement("a")
     const file = new Blob([markdown], { type: "text/plain" })
@@ -16,26 +25,49 @@ const Main = () => {
     source.click()
   }
 
-  function handleReset() {
-    setMarkdown("")
-  }
-
   return (
-    <main>
-      <div>
-        <div className="options">
+    <MainWrapper>
+      <MarkdownPreview source={markdown} />
+      <MarkdownEditor>
+        <textarea onChange={handleChange} value={markdown} />
+        <ul>
           <button onClick={handleReset} type="button">
             Reset
           </button>
           <button onClick={handleDownload} type="button">
             Download
           </button>
-        </div>
-        <textarea className="editor" onChange={handleChange} value={markdown} />
-      </div>
-      <ReactMarkdown className="preview" source={markdown} />
-    </main>
+        </ul>
+      </MarkdownEditor>
+    </MainWrapper>
   )
 }
 
 export default Main
+
+// Component Styles
+const MainWrapper = styled.main`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  > * {
+    height: calc(100vh - 225px);
+    min-height: 400px;
+  }
+`
+
+const MarkdownEditor = styled.div``
+
+const MarkdownPreview = styled(ReactMarkdown)`
+  color: var(--dark);
+  background: var(--light);
+  overflow-y: scroll;
+  padding: 0.5rem 2rem;
+  font-family: var(--sans);
+  a {
+    color: var(--blue);
+    :hover {
+      color: var(--blueAlt);
+    }
+  }
+`
