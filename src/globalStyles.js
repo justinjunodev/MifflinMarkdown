@@ -19,14 +19,16 @@ const GlobalStyle = createGlobalStyle`
 
 html {
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 body {
   height: 100vh;
-  padding: 0;
+  padding: 0 2rem;
   margin: 0;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: var(--serif);
+  line-height: 1.5;
   background-color: var(--blue);
   background-image: linear-gradient(110deg, var(--blue) 25%, var(--blueAlt) 100%);
 }
