@@ -32,12 +32,16 @@ const Main = () => {
       <MarkdownEditor>
         <textarea onChange={handleChange} value={markdown} />
         <ul>
-          <button onClick={handleReset} type="button">
-            Reset
-          </button>
-          <button onClick={handleDownload} type="button">
-            Download
-          </button>
+          <li>
+            <button onClick={handleReset} type="button">
+              Reset
+            </button>
+          </li>
+          <li>
+            <button onClick={handleDownload} type="button">
+              Download
+            </button>
+          </li>
         </ul>
       </MarkdownEditor>
     </MainWrapper>
@@ -57,8 +61,6 @@ const MainWrapper = styled.main`
   }
 `
 
-const MarkdownEditor = styled.div``
-
 const MarkdownPreview = styled(ReactMarkdown)`
   color: var(--dark);
   background: var(--light);
@@ -70,6 +72,41 @@ const MarkdownPreview = styled(ReactMarkdown)`
     :hover {
       color: var(--blueAlt);
       text-decoration: none;
+    }
+  }
+`
+
+const MarkdownEditor = styled.div`
+  height: calc(100vh - 225px);
+  position: relative;
+  textarea {
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    resize: none;
+    outline: none;
+    background: none;
+    border: 2px solid var(--light);
+    font-family: var(--serif);
+    color: var(--light);
+  }
+  ul {
+    display: flex;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    margin: 0;
+    list-style: none;
+    li:first-of-type {
+      margin-right: 1rem;
+    }
+    button {
+      border: none;
+      background: var(--light);
+      font-family: var(--sans);
+      color: var(--dark);
+      padding: 0.5rem 2rem;
+      cursor: pointer;
     }
   }
 `
