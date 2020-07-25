@@ -59,6 +59,11 @@ const MainWrapper = styled.main`
     height: calc(100vh - 16.5rem);
     min-height: 400px;
   }
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+    height: auto;
+    margin: 3rem auto 1.5rem;
+  }
 `
 
 const MarkdownPreview = styled(ReactMarkdown)`

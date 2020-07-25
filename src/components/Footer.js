@@ -39,4 +39,8 @@ const FooterWrapper = styled.footer`
       text-decoration: none;
     }
   }
+  @media (max-width: 700px) {
+    height: auto;
+    margin: 3rem auto 3rem;
+  }
 `

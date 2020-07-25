@@ -43,6 +43,12 @@ const HeaderWrapper = styled.header`
   max-width: 1600px;
   margin: 0 auto;
   color: white;
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+    height: auto;
+    margin: 3rem auto;
+    text-align: center;
+  }
 `
 
 const HeaderLogo = styled.div`
@@ -67,5 +73,8 @@ const HeaderQuote = styled.aside`
     margin: 0;
     line-height: 1.5;
     font-style: italic;
+  }
+  @media (max-width: 700px) {
+    text-align: center;
   }
 `
