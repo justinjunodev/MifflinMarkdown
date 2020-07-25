@@ -1,7 +1,6 @@
 import React from "react"
 import Helmet from "react-helmet"
 import GlobalStyle from "./globalStyles"
-
 import Header from "./components/Header"
 import Main from "./components/Main"
 import Footer from "./components/Footer"

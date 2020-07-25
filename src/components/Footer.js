@@ -7,7 +7,10 @@ const Footer = () => {
       <h2>Mifflin.md</h2>
       <h3>A Markdown Company</h3>
       <p>
-        <small>All Rights Reserved &copy; {new Date().getFullYear()}</small>
+        <small>
+          All Rights Reserved &copy; {new Date().getFullYear()} — Made by{" "}
+          <a href="https://twitter.com/justinjunodev">@JustinJunoDev</a>
+        </small>
       </p>
     </FooterWrapper>
   )
@@ -31,5 +34,9 @@ const FooterWrapper = styled.footer`
   p {
     opacity: 0.75;
     margin: 0.5rem 0 0;
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
 `
