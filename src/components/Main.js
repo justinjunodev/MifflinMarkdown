@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import ReactMarkdown from "react-markdown"
+import "github-markdown-css"
 
 const Main = () => {
   // Set Initial State
@@ -27,7 +28,7 @@ const Main = () => {
 
   return (
     <MainWrapper>
-      <MarkdownPreview source={markdown} />
+      <MarkdownPreview source={markdown} className="markdown-body" />
       <MarkdownEditor>
         <textarea onChange={handleChange} value={markdown} />
         <ul>
@@ -62,12 +63,13 @@ const MarkdownPreview = styled(ReactMarkdown)`
   color: var(--dark);
   background: var(--light);
   overflow-y: scroll;
-  padding: 0.5rem 2rem;
+  padding: 2rem;
   font-family: var(--sans);
   a {
     color: var(--blue);
     :hover {
       color: var(--blueAlt);
+      text-decoration: none;
     }
   }
 `
