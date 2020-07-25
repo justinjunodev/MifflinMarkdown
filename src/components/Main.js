@@ -22,7 +22,7 @@ const Main = () => {
     const source = document.createElement("a")
     const file = new Blob([markdown], { type: "text/plain" })
     source.href = URL.createObjectURL(file)
-    source.download = "mifflin.md"
+    source.download = "MIFFLIN.md"
     source.click()
   }
 
@@ -54,19 +54,20 @@ export default Main
 const MainWrapper = styled.main`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 3rem;
   > * {
-    height: calc(100vh - 225px);
+    height: calc(100vh - 16.5rem);
     min-height: 400px;
   }
 `
 
 const MarkdownPreview = styled(ReactMarkdown)`
-  color: var(--dark);
-  background: var(--light);
-  overflow-y: scroll;
-  padding: 2rem;
+  background: white;
+  border-radius: 0.5rem;
   font-family: var(--sans);
+  color: var(--black);
+  padding: 1.5rem;
+  overflow-y: scroll;
   a {
     color: var(--blue);
     :hover {
@@ -77,36 +78,43 @@ const MarkdownPreview = styled(ReactMarkdown)`
 `
 
 const MarkdownEditor = styled.div`
-  height: calc(100vh - 225px);
   position: relative;
   textarea {
+    border-radius: 0.5rem;
     height: 100%;
     width: 100%;
-    padding: 2rem;
+    padding: 1.5rem;
     resize: none;
     outline: none;
     background: none;
-    border: 2px solid var(--light);
+    border: 3px solid rgba(255, 255, 255, 0.75);
     font-family: var(--serif);
-    color: var(--light);
+    color: white;
+    opacity: 0.75;
   }
   ul {
     display: flex;
     position: absolute;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
     margin: 0;
     list-style: none;
     li:first-of-type {
       margin-right: 1rem;
     }
-    button {
-      border: none;
-      background: var(--light);
-      font-family: var(--sans);
-      color: var(--dark);
-      padding: 0.5rem 2rem;
-      cursor: pointer;
+  }
+  button {
+    border: none;
+    background: white;
+    font-family: var(--sans);
+    font-weight: 700;
+    color: var(--black);
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    opacity: 0.75;
+    :hover {
+      opacity: 1;
     }
   }
 `

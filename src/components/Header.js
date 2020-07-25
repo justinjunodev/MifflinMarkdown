@@ -37,19 +37,17 @@ export default Header
 // Component Styles
 const HeaderWrapper = styled.header`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
-  height: 100px;
+  grid-template-columns: auto 1fr;
+  grid-gap: 3rem;
+  height: 7.5rem;
   max-width: 1600px;
   margin: 0 auto;
-  color: var(--light);
+  color: white;
 `
 
 const HeaderLogo = styled.div`
   align-self: center;
   h1 {
-    font-size: 2rem;
-    font-family: var(--sans);
     text-transform: uppercase;
     margin: 0;
   }
@@ -62,10 +60,12 @@ const HeaderQuote = styled.aside`
     font-size: 0.75rem;
     font-family: var(--sans);
     line-height: 1;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+    opacity: 0.75;
   }
   blockquote {
     margin: 0;
+    line-height: 1.5;
     font-style: italic;
   }
 `
